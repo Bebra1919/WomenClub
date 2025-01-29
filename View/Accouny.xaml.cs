@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WomenClub.Model;
 
 namespace WomenClub.View
 {
@@ -20,7 +21,7 @@ namespace WomenClub.View
     /// </summary>
     public partial class Accouny : Page
     {
-        public Accouny(User user)
+        public Accouny(Users user)
         {
             InitializeComponent();
             NameTextBlock.Text = $"{user.getName()} {user.getSurname()}";

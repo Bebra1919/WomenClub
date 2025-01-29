@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiveCharts.Wpf;
+using LiveCharts;
 
 namespace WomenClub.View
 {
@@ -23,6 +25,17 @@ namespace WomenClub.View
         public IncomPage()
         {
             InitializeComponent();
+            pieChart.Series = new SeriesCollection()
+            {
+                new PieSeries
+                {
+                    Values = new ChartValues<double> {20},
+                    DataLabels = true,
+                    LabelPoint = charPoint => $"{charPoint.Y}({charPoint.Participation:P})"
+
+                }
+            };
+            pieChart.LegendLocation = LegendLocation.Right;
         }
     }
 }

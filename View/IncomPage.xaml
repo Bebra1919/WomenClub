@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WomenClub.View"
+      xmlns:vlc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="IncomPage">
@@ -18,25 +19,36 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Доходы"
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Доходы"
                 Foreground="{StaticResource ElementsColor}"
                 FontSize="36px"
-                HorizontalAlignment="Center"
-                />
-        
+                HorizontalAlignment="Center"/>
+
+            <vlc:PieChart Name="pieChart"
+                          Height="600px"
+                          Margin="0 80px 0 0"/>
+        </StackPanel>
+
+
+
         <TextBlock Text="0.0 Рублей"
                 Grid.Column="1"
                 Foreground="{StaticResource ElementsColor}"
                 FontSize="36px"
                 HorizontalAlignment="Center"
-                />
+               />
         
         
 
         <StackPanel Grid.Row="1"
                  Grid.Column="1"
-                 VerticalAlignment="Center"
-                 >
+                 VerticalAlignment="Center">
+            
+          
+           
+            
             <Button Content="Создать счёт"
             Width="200px"
             Height="30px"

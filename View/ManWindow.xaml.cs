@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WomenClub.Model;
 
 namespace WomenClub.View
 {
@@ -19,10 +20,12 @@ namespace WomenClub.View
     /// </summary>
     public partial class ManWindow : Window
     {
-        public ManWindow()
+        public Users user;
+        public ManWindow(Users user)
         {
             InitializeComponent();
             ManFrame.Content = new HomePage();
+            this.user = user;
         }
 
         private void DomImageClick(object sender, MouseButtonEventArgs e)
@@ -47,7 +50,7 @@ namespace WomenClub.View
 
         private void AccountImageClick(object sender, MouseButtonEventArgs e)
         {
-            ManFrame.Content = new Accouny();
+            ManFrame.Content = new Accouny(user);
         }
 
         private void SettingsImageClick(object sender, MouseButtonEventArgs e)

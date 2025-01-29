@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WomenClub.Model;
 
 namespace WomenClub.View
 {
@@ -21,6 +22,7 @@ namespace WomenClub.View
     public partial class LoginPage : Page
     {
         Window LoginWindow;
+        Users user;
         public LoginPage(Window loginWindow)
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace WomenClub.View
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            ManWindow manWindow = new ManWindow();
+            ManWindow manWindow = new ManWindow(user);
             manWindow.Show();
             LoginWindow.Close();
         }
